@@ -1,0 +1,3 @@
+purno a = 10;
+jodi (a > 5) {
+    mudron(a);

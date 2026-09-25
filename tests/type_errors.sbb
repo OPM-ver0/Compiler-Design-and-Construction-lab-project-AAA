@@ -1,0 +1,7 @@
+purno number = 10;
+okkhormala text = "hello";
+number = text;
+mudron(number + text);
+jodi (text) {
+    mudron("invalid");
+}

@@ -1,0 +1,4 @@
+purno value = 00042;
+doshomik rate = 0001.50;
+mudron(value);
+mudron(rate);

@@ -1,0 +1,13 @@
+purno a = 2 + 3 * 4;
+doshomik b = a / 2;
+okkhormala msg = "Value: ";
+
+jodi (a == 14 && b > 6.0) {
+    mudron(msg + "ok");
+} onnothay {
+    mudron("bad");
+}
+
+jotokkhon (a < 17) {
+    a = a + 1;
+}

@@ -1,0 +1,4 @@
+purno a = 10
+purno b = ;
+jodi (a > 5) {
+    mudron("ok");
