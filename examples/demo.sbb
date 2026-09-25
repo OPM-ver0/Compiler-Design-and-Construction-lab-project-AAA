@@ -1,0 +1,30 @@
+// Demonstrates literary-style Roman Bangla keywords, logical operators,
+// conditional branches, repetition, input, continuation, and termination.
+
+purno marks = 78;
+
+jodi (marks >= 90) {
+    mudron("Uttom");
+} onnothay jodi (marks >= 80) {
+    mudron("Ati Uttom");
+} onnothay jodi (marks >= 70 && marks < 80) {
+    mudron("Shadharoner Tulonay Bhalo");
+} onnothay {
+    mudron("Aro Parishrom Proyojon");
+}
+
+purno counter = 0;
+
+jotokkhon (counter < 8) {
+    counter = counter + 1;
+
+    jodi (counter == 2 || counter == 5) {
+        ogrosor;
+    }
+
+    jodi (counter > 6 && counter < 8) {
+        sthogito;
+    }
+
+    mudron(counter);
+}
