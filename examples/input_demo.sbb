@@ -1,0 +1,6 @@
+okkhormala naam = grohon();
+mudron("Namaskar, " + naam);
+
+purno jonmo = grohon();
+purno bochor = 2026 - jonmo;
+mudron(bochor);
