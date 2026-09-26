@@ -13,7 +13,7 @@ all: $(TARGET)
 $(FLEX_GEN): $(FLEX_SRC) part01_token.hpp
 	flex -o $@ $<
 
-$(TARGET): $(FLEX_GEN) sadhu_bangla_flex_main.cpp part01_token.hpp part03_ast_types.cpp part04_parser.cpp part05_type_checker.cpp part06_python_code_generator.cpp part07_utils.cpp
+$(TARGET): $(FLEX_GEN) sadhu_bangla_flex_main.cpp part01_token.hpp part03_ast_types.cpp part04_parser.cpp part05_type_checker.cpp part06_python_code_generator.cpp part07_utils.cpp part09_debug_printer.cpp part10_ir.cpp
 	$(CXX) $(CXXFLAGS) $(FLEX_GEN) sadhu_bangla_flex_main.cpp -o $@
 
 flex: $(TARGET)
