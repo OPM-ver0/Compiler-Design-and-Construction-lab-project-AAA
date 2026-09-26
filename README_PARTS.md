@@ -48,7 +48,15 @@ The parser also has basic error recovery by synchronizing at semicolons, source-
 `part08_main.cpp` is the standalone driver. `sadhu_bangla_flex_main.cpp` is the required Flex-based driver. Both support:
 
 ```text
-compiler source.sbb [output.py] [--no-run]
+compiler source.sbb [output.py] [--no-run] [--tokens] [--ast] [--ir] [--all]
 ```
 
-The Flex driver uses the same parser, type checker, and code generator as the standalone compiler.
+The Flex driver uses the same parser, type checker, IR generator, and code generator as the standalone compiler.
+
+## Part 09 — Debug Printers
+
+`part09_debug_printer.cpp` renders the token stream (`--tokens`) and the parsed AST (`--ast`) for inspection.
+
+## Part 10 — Intermediate Representation (3AC)
+
+`part10_ir.cpp` lowers the type-checked AST into linear three-address code (`--ir`): each instruction performs at most one operation (`t0 = a + b`), and control flow (`jodi`/`onnothay`, `jotokkhon`, `sthogito`/`ogrosor`) becomes labels and conditional/unconditional jumps (`ifFalse ... goto ...`, `goto ...`). This stage runs after type checking and before Python code generation, giving a target-independent view of the program that a future backend or optimization pass could consume instead of emitting Python directly from the AST.
