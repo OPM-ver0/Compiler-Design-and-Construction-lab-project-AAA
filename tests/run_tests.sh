@@ -45,6 +45,24 @@ run_failure tests/bad_expr.sbb
 run_failure tests/multi_errors.sbb
 run_failure tests/invalid_loop_control.sbb
 
+run_ir() {
+    local src="$1"
+    local out="$tmpdir/$(basename "$src" .sbb)-ir.py"
+    local stdout="$tmpdir/ir.stdout"
+    if "$COMPILER" "$src" "$out" --ir --no-run >"$stdout" 2>"$tmpdir/ir.stderr" \
+       && grep -q '=== 3AC / IR ===' "$stdout"; then
+        echo "PASS  $src (--ir)"
+        PASS=$((PASS + 1))
+    else
+        echo "FAIL  $src (--ir)"
+        cat "$tmpdir/ir.stderr"
+        FAIL=$((FAIL + 1))
+    fi
+}
+
+run_ir tests/valid.sbb
+run_ir examples/demo.sbb
+
 run_runtime() {
     local src="$1"
     local out="$tmpdir/runtime.py"
